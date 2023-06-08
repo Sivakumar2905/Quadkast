@@ -13,7 +13,6 @@ export const schemaValidator = (schema) => (req, res, next) => {
     abortEarly: false,
   });
 
-  console.log("errrrrorrrrr", error);
   if (error) {
     console.log("error Found in Schema Validations");
     const errorMessage = error.details.map((err) => err.message);
@@ -21,7 +20,6 @@ export const schemaValidator = (schema) => (req, res, next) => {
     res.status(400).json({ status: 400, data: errorMessage });
     return;
   }
-  reqdata = value;
   next();
 };
 

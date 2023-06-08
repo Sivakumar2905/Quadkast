@@ -42,7 +42,7 @@ export const getTotalPricebyRoomtype_Controller = async (req, res, next) => {
 
     //Query
     const [data] = await db.collection(QUADKAST).aggregate(aggPipe).toArray();
-    console.log("data", data);
+
     if (!data) {
       res.status(400).json({ status: 400, data: "Invalid RoomType" });
       return;

@@ -8,8 +8,6 @@ export const getPropertiesByNearLatitudeAndLongitude = async (
 ) => {
   try {
     const { latitude, longitude } = req.query;
-    console.log("latitude", typeof latitude);
-    console.log("longitude", longitude);
 
     if (!latitude || !longitude) {
       res.status(400).json({
@@ -41,8 +39,6 @@ export const getPropertiesByNearLatitudeAndLongitude = async (
         },
       ])
       .toArray();
-
-    // console.log("data", data);
 
     res.status(200).json({ status: 200, data });
     return;
